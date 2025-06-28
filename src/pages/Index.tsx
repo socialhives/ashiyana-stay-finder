@@ -7,6 +7,7 @@ import HeroSection from '@/components/HeroSection';
 import QuickInfoGrid from '@/components/QuickInfoGrid';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
 import AboutPreview from '@/components/AboutPreview';
+import RoomTour from '@/components/RoomTour';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 
@@ -29,6 +30,7 @@ const Index = () => {
       </section>
 
       <QuickInfoGrid />
+      <RoomTour />
       <AboutPreview />
       <TestimonialsSlider />
       <Footer />
