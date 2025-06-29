@@ -7,10 +7,9 @@ import HeroSection from '@/components/HeroSection';
 import QuickInfoGrid from '@/components/QuickInfoGrid';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
 import AboutPreview from '@/components/AboutPreview';
-import RoomTour from '@/components/RoomTour';
-import VirtualTour360 from '@/components/VirtualTour360';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import ServiceSelection from '@/components/ServiceSelection';
 
 const Index = () => {
   return (
@@ -49,9 +48,8 @@ const Index = () => {
         </div>
       </section>
 
+      <ServiceSelection />
       <QuickInfoGrid />
-      <VirtualTour360 />
-      <RoomTour />
       <AboutPreview />
       <TestimonialsSlider />
       <Footer />
