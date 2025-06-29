@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Phone, ArrowRight, MapPin, Users, Shield, Clock, Star, Wifi, Car, Utensils } from 'lucide-react';
+import { Phone, ArrowRight, MapPin, Users, Shield, Clock, Star, Wifi, Car, Utensils, Building, Home } from 'lucide-react';
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState('');
@@ -10,10 +10,32 @@ const HeroSection = () => {
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState('Sector 11');
+  const [selectedService, setSelectedService] = useState('pg');
   const [counters, setCounters] = useState({ residents: 0, years: 0, satisfaction: 0 });
 
-  const texts = ['Your Home Away From Home', 'Safe & Secure Living', 'Premium PG Experience', 'Comfortable Stays'];
+  const texts = ['Your Premium Hospitality Partner', 'Safe & Secure Living', 'Luxury Stays & Comfort', 'Complete Hospitality Solutions'];
   const locations = ['Sector 11', 'Sector 15', 'Sector 21', 'NIT Area'];
+
+  const services = [
+    {
+      id: 'pg',
+      title: 'PG Services',
+      subtitle: 'Ashiyana PG',
+      icon: Home,
+      description: 'Premium paying guest accommodation with all modern amenities'
+    },
+    {
+      id: 'hotels',
+      title: 'Hotel Services',
+      subtitle: 'Luxury Hotels',
+      icon: Building,
+      description: 'Premium hotel experiences with world-class facilities',
+      subServices: [
+        { name: 'Hotel High View', location: 'Premium Location' },
+        { name: 'LA Casa Residence', location: 'Luxury Suites' }
+      ]
+    }
+  ];
 
   // Typing animation effect
   useEffect(() => {
@@ -52,7 +74,7 @@ const HeroSection = () => {
   }, [counters]);
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/919876543210?text=Hi, I would like to inquire about Ashiyana PG accommodation', '_blank');
+    window.open('https://wa.me/919876543210?text=Hi, I would like to inquire about NST Hospitality services', '_blank');
   };
 
   const handleCall = () => {
@@ -62,15 +84,15 @@ const HeroSection = () => {
   const features = [
     { icon: Shield, title: 'Safe & Secure', desc: '24/7 Security' },
     { icon: Wifi, title: 'High-Speed WiFi', desc: 'Unlimited Internet' },
-    { icon: Utensils, title: 'Healthy Meals', desc: '3 Times Daily' },
+    { icon: Utensils, title: 'Quality Food', desc: 'Premium Dining' },
     { icon: Car, title: 'Parking', desc: 'Secure Vehicle Parking' }
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800 overflow-hidden">
-      {/* Animated Background Particles */}
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-800 overflow-hidden">
+      {/* Enhanced Background Particles */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(30)].map((_, i) => (
           <div
             key={i}
             className="absolute w-2 h-2 bg-white/20 rounded-full animate-pulse"
@@ -85,19 +107,52 @@ const HeroSection = () => {
       </div>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/80 to-blue-800/80 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-purple-900/90 to-slate-800/90 z-10"></div>
       
       {/* Hero Content */}
       <div className="relative z-20 container mx-auto px-4 text-center text-white">
-        <div className="max-w-6xl mx-auto">
-          {/* Main Heading with Typing Animation */}
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-              Welcome to <span className="text-orange-400">Ashiyana PG</span>
+        <div className="max-w-7xl mx-auto">
+          {/* Main Brand Heading */}
+          <div className="mb-12">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent">
+              NST HOSPITALITY
             </h1>
-            <h2 className="text-xl md:text-3xl mb-6 text-blue-100 h-12">
+            <h2 className="text-xl md:text-3xl mb-8 text-slate-100 h-12">
               {currentText}<span className="animate-pulse">|</span>
             </h2>
+          </div>
+
+          {/* Service Selection Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
+            {services.map((service) => (
+              <Card 
+                key={service.id}
+                className={`cursor-pointer transition-all duration-300 transform hover:scale-105 border-2 ${
+                  selectedService === service.id 
+                    ? 'bg-gradient-to-br from-orange-500/20 to-red-500/20 border-orange-400 shadow-2xl' 
+                    : 'bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20'
+                }`}
+                onClick={() => setSelectedService(service.id)}
+              >
+                <CardContent className="p-8 text-center">
+                  <service.icon className={`w-12 h-12 mx-auto mb-4 ${selectedService === service.id ? 'text-orange-400' : 'text-white'}`} />
+                  <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
+                  <h4 className="text-lg text-orange-300 mb-3">{service.subtitle}</h4>
+                  <p className="text-slate-200 text-sm mb-4">{service.description}</p>
+                  
+                  {service.subServices && (
+                    <div className="space-y-2 mt-4">
+                      {service.subServices.map((sub, idx) => (
+                        <div key={idx} className="bg-white/10 rounded-lg p-3">
+                          <div className="font-semibold text-white">{sub.name}</div>
+                          <div className="text-xs text-slate-300">{sub.location}</div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
           {/* Interactive Stats Counter */}
@@ -105,24 +160,24 @@ const HeroSection = () => {
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer hover:scale-105">
               <CardContent className="p-4 text-center">
                 <div className="text-2xl font-bold text-orange-400">{counters.residents}+</div>
-                <div className="text-sm text-blue-100">Happy Residents</div>
+                <div className="text-sm text-slate-100">Happy Clients</div>
               </CardContent>
             </Card>
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer hover:scale-105">
               <CardContent className="p-4 text-center">
                 <div className="text-2xl font-bold text-orange-400">{counters.years}+</div>
-                <div className="text-sm text-blue-100">Years Experience</div>
+                <div className="text-sm text-slate-100">Years Experience</div>
               </CardContent>
             </Card>
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer hover:scale-105">
               <CardContent className="p-4 text-center">
                 <div className="text-2xl font-bold text-orange-400">{counters.satisfaction}%</div>
-                <div className="text-sm text-blue-100">Satisfaction Rate</div>
+                <div className="text-sm text-slate-100">Satisfaction Rate</div>
               </CardContent>
             </Card>
           </div>
 
-          {/* Interactive Feature Cards */}
+          {/* Enhanced Feature Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
             {features.map((feature, index) => (
               <Card 
@@ -132,7 +187,7 @@ const HeroSection = () => {
                 <CardContent className="p-4 text-center">
                   <feature.icon className="w-8 h-8 mx-auto mb-2 text-orange-400 group-hover:text-orange-300 transition-colors" />
                   <div className="text-sm font-semibold text-white">{feature.title}</div>
-                  <div className="text-xs text-blue-100">{feature.desc}</div>
+                  <div className="text-xs text-slate-100">{feature.desc}</div>
                 </CardContent>
               </Card>
             ))}
@@ -140,7 +195,7 @@ const HeroSection = () => {
 
           {/* Interactive Location Selector */}
           <div className="mb-8">
-            <p className="text-blue-100 mb-4">Choose Your Preferred Location:</p>
+            <p className="text-slate-100 mb-4">Choose Your Preferred Location:</p>
             <div className="flex flex-wrap justify-center gap-2">
               {locations.map((location) => (
                 <Button
@@ -164,7 +219,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <Button 
               size="lg" 
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
+              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Enquire Now 
@@ -173,7 +228,7 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300 group"
+              className="border-2 border-white text-white hover:bg-white hover:text-slate-800 px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300 group"
               onClick={handleCall}
             >
               <Phone className="mr-2 w-5 h-5 group-hover:animate-pulse" />
