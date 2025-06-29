@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -8,7 +7,7 @@ import {
   Wifi, 
   Utensils, 
   Car, 
-  Washing, 
+  Shirt, 
   Users,
   MapPin,
   Phone,
@@ -27,7 +26,7 @@ const PGServices = () => {
     { icon: Wifi, title: 'High-Speed WiFi', description: 'Unlimited internet access' },
     { icon: Utensils, title: 'Quality Food', description: 'Hygienic homemade meals' },
     { icon: Car, title: 'Parking', description: 'Secure vehicle parking' },
-    { icon: Washing, title: 'Laundry', description: 'Professional laundry service' },
+    { icon: Shirt, title: 'Laundry', description: 'Professional laundry service' },
     { icon: Users, title: 'Common Areas', description: 'Recreation and study rooms' }
   ];
 
