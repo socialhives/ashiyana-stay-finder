@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
@@ -16,65 +16,57 @@ import {
   Users,
   Clock,
   Heart,
-  Play
+  Play,
+  Eye
 } from 'lucide-react';
 
 const HeroSection = () => {
-  const [activeTheme, setActiveTheme] = useState(0);
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [selectedService, setSelectedService] = useState('pg');
-
-  const colorThemes = [
-    {
-      name: 'Ocean Blue',
-      gradient: 'from-blue-900 via-blue-700 to-teal-600',
-      accent: 'blue-500',
-      text: 'text-blue-100'
-    },
-    {
-      name: 'Sunset Orange',
-      gradient: 'from-orange-900 via-red-700 to-pink-600',
-      accent: 'orange-500',
-      text: 'text-orange-100'
-    },
-    {
-      name: 'Purple Dream',
-      gradient: 'from-purple-900 via-violet-700 to-indigo-600',
-      accent: 'purple-500',
-      text: 'text-purple-100'
-    },
-    {
-      name: 'Emerald Forest',
-      gradient: 'from-emerald-900 via-green-700 to-teal-600',
-      accent: 'emerald-500',
-      text: 'text-emerald-100'
-    }
-  ];
-
-  const heroTexts = [
-    'Your Premium Hospitality Partner',
-    'Luxury Living Redefined',
-    'Where Comfort Meets Excellence',
-    'Safe, Secure & Stylish'
-  ];
+  const [selectedService, setSelectedService] = useState('ashiyana-boys');
 
   const services = [
     {
-      id: 'pg',
-      title: 'PG Services',
-      subtitle: 'Ashiyana PG',
+      id: 'ashiyana-boys',
+      title: 'Ashiyana PG - Boys',
+      subtitle: 'Faridabad Sector 11',
       icon: Home,
-      description: 'Modern paying guest facilities with premium amenities',
-      features: ['24/7 Security', 'Free WiFi', 'Meals Included', 'Laundry Service']
+      description: 'Modern paying guest facilities for boys with premium amenities',
+      features: ['24×7 Availability', 'Food & Wi-Fi Included', 'Safe Environment', 'Affordable Rooms'],
+      price: '₹6,500/month',
+      virtualTour: 'https://www.google.com/maps/embed?pb=!4v1751213104768!6m8!1m7!1sDmf-NLSvLKjcw4VI5OPrBg!2m2!1d28.37242671307965!2d77.31701542750908!3f179.46771648654584!4f-2.6347485845922165!5f0.7820865974627469',
+      category: 'pg'
     },
     {
-      id: 'hotel',
-      title: 'Hotel Services', 
-      subtitle: 'Luxury Hotels',
+      id: 'ashiyana-girls',
+      title: 'Ashiyana PG - Girls',
+      subtitle: 'Faridabad Sector 11',
+      icon: Home,
+      description: 'Secure and comfortable accommodation exclusively for girls',
+      features: ['24×7 Security', 'Food & Wi-Fi Included', 'Girls Only', 'Safe Environment'],
+      price: '₹7,500/month',
+      virtualTour: 'https://www.google.com/maps/embed?pb=!4v1751197422003!6m8!1m7!1sMua3Ksx4fcGjyAJ6TGAynw!2m2!1d28.36897219909992!2d77.31684057411158!3f186.99776!4f0!5f0.7820865974627469',
+      category: 'pg'
+    },
+    {
+      id: 'hotel-high-view',
+      title: 'Hotel High View',
+      subtitle: 'Premium Location',
       icon: Building,
-      description: 'Premium hotel experiences with world-class hospitality',
-      features: ['Room Service', 'Concierge', 'Spa & Wellness', 'Fine Dining']
+      description: 'Premium hotel experience with world-class facilities',
+      features: ['Basic: ₹1,500', 'Standard: ₹2,000', 'Premium: ₹2,500', 'Room Service'],
+      price: 'Starting ₹1,500/night',
+      virtualTour: 'https://www.google.com/maps/embed?pb=!4v1751213579389!6m8!1m7!1sWLnwIKMutcmsRsq-D5se8w!2m2!1d28.36873826141216!2d77.31457806147561!3f280.0104165379419!4f-5.018538503390701!5f0.7820865974627469',
+      category: 'hotel'
+    },
+    {
+      id: 'la-casa-hotel',
+      title: 'La Casa Hotel',
+      subtitle: 'Luxury Accommodation',
+      icon: Building,
+      description: 'Elegant hotel with comfortable rooms and excellent service',
+      features: ['Normal: ₹1,000', 'Super Deluxe: ₹1,500', 'Quality Service', 'Modern Amenities'],
+      price: 'Starting ₹1,000/night',
+      virtualTour: 'https://www.google.com/maps/embed?pb=!4v1751213618963!6m8!1m7!1sR5mHxyypiMT4JIEIxIQpUA!2m2!1d28.36857648635734!2d77.31687475599934!3f2.3960502838757476!4f4.761660405021786!5f0.5138692359333277',
+      category: 'hotel'
     }
   ];
 
@@ -85,24 +77,6 @@ const HeroSection = () => {
     { number: '24/7', label: 'Support', icon: Shield }
   ];
 
-  // Auto-cycle themes every 8 seconds
-  useEffect(() => {
-    const themeTimer = setInterval(() => {
-      setActiveTheme((prev) => (prev + 1) % colorThemes.length);
-    }, 8000);
-    return () => clearInterval(themeTimer);
-  }, []);
-
-  // Auto-cycle hero text every 3 seconds
-  useEffect(() => {
-    const textTimer = setInterval(() => {
-      setCurrentTextIndex((prev) => (prev + 1) % heroTexts.length);
-    }, 3000);
-    return () => clearInterval(textTimer);
-  }, []);
-
-  const currentTheme = colorThemes[activeTheme];
-
   const handleCall = () => {
     window.location.href = 'tel:+919876543210';
   };
@@ -111,61 +85,34 @@ const HeroSection = () => {
     window.open('https://wa.me/919876543210?text=Hi, I would like to inquire about NST Hospitality services', '_blank');
   };
 
-  const handleVideoPlay = () => {
-    setIsPlaying(true);
-    // Simulate video play - in real implementation, you'd open a video modal
-    setTimeout(() => setIsPlaying(false), 3000);
-  };
+  const selectedServiceData = services.find(service => service.id === selectedService);
 
   return (
-    <section className={`relative min-h-screen flex items-center justify-center bg-gradient-to-br ${currentTheme.gradient} overflow-hidden transition-all duration-1000 ease-in-out`}>
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-purple-900 to-slate-800 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Floating Particles */}
-        {[...Array(50)].map((_, i) => (
+        {/* Static Particles */}
+        {[...Array(30)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-white/30 rounded-full animate-pulse"
+            className="absolute w-1 h-1 bg-white/20 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${2 + Math.random() * 4}s`
             }}
           />
         ))}
         
         {/* Gradient Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/3 rounded-full blur-3xl"></div>
       </div>
 
       {/* Main Content */}
       <div className="relative z-20 container mx-auto px-4 text-center text-white">
         <div className="max-w-7xl mx-auto">
           
-          {/* Theme Selector */}
-          <div className="mb-8 flex justify-center">
-            <div className="flex gap-2 bg-white/10 backdrop-blur-sm rounded-full p-2">
-              {colorThemes.map((theme, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTheme(index)}
-                  className={`w-4 h-4 rounded-full transition-all duration-300 hover:scale-125 ${
-                    activeTheme === index ? 'ring-2 ring-white ring-offset-2 ring-offset-transparent scale-125' : ''
-                  }`}
-                  style={{
-                    background: index === 0 ? '#3b82f6' : 
-                               index === 1 ? '#f97316' :
-                               index === 2 ? '#8b5cf6' : '#10b981'
-                  }}
-                  title={theme.name}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Brand & Dynamic Text */}
+          {/* Brand Header */}
           <div className="mb-12 space-y-6">
             <div className="inline-flex items-center gap-4 mb-6">
               <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
@@ -176,54 +123,79 @@ const HeroSection = () => {
               </h1>
             </div>
             
-            <div className="relative h-16 flex items-center justify-center">
-              <h2 className="text-xl md:text-3xl font-semibold text-white/90 animate-fade-in">
-                {heroTexts[currentTextIndex]}
-              </h2>
-            </div>
+            <h2 className="text-xl md:text-3xl font-semibold text-white/90">
+              Your Premium Hospitality Partner
+            </h2>
           </div>
 
-          {/* Interactive Service Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
-            {services.map((service) => {
-              const isActive = selectedService === service.id;
-              return (
-                <Card 
-                  key={service.id}
-                  className={`cursor-pointer transition-all duration-500 transform hover:scale-105 border-2 group ${
-                    isActive 
-                      ? 'bg-white/20 backdrop-blur-md border-white/50 shadow-2xl shadow-white/20' 
-                      : 'bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/15'
-                  }`}
-                  onClick={() => setSelectedService(service.id)}
-                >
-                  <CardContent className="p-8 text-center space-y-4">
-                    <div className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center transition-all duration-300 ${
-                      isActive ? 'bg-white/30 scale-110' : 'bg-white/20 group-hover:bg-white/25'
-                    }`}>
-                      <service.icon className="w-8 h-8 text-white" />
+          {/* Service Selection Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            {services.map((service) => (
+              <button
+                key={service.id}
+                onClick={() => setSelectedService(service.id)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  selectedService === service.id
+                    ? 'bg-white text-gray-900 shadow-lg'
+                    : 'bg-white/10 text-white hover:bg-white/20'
+                }`}
+              >
+                {service.title}
+              </button>
+            ))}
+          </div>
+
+          {/* Selected Service Details */}
+          {selectedServiceData && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
+              {/* Service Info Card */}
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all duration-300">
+                <CardContent className="p-8 text-center space-y-6">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-white/20 flex items-center justify-center">
+                    <selectedServiceData.icon className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">{selectedServiceData.title}</h3>
+                    <h4 className="text-lg text-white/80 mb-4">{selectedServiceData.subtitle}</h4>
+                    <p className="text-white/70 text-sm mb-4">{selectedServiceData.description}</p>
+                    <div className="text-2xl font-bold text-yellow-400 mb-4">{selectedServiceData.price}</div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    {selectedServiceData.features.map((feature, idx) => (
+                      <div key={idx} className="bg-white/10 rounded-lg p-2 text-xs text-white/80">
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* 360° Virtual Tour */}
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="relative">
+                    <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-2">
+                      <Eye className="w-3 h-3" />
+                      360° Virtual Tour
                     </div>
                     
-                    <div>
-                      <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
-                      <h4 className="text-lg text-white/80 mb-4">{service.subtitle}</h4>
-                      <p className="text-white/70 text-sm mb-4">{service.description}</p>
-                    </div>
-
-                    {isActive && (
-                      <div className="grid grid-cols-2 gap-2 animate-fade-in">
-                        {service.features.map((feature, idx) => (
-                          <div key={idx} className="bg-white/10 rounded-lg p-2 text-xs text-white/80">
-                            {feature}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
+                    <iframe 
+                      src={selectedServiceData.virtualTour}
+                      width="100%" 
+                      height="400" 
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="rounded-lg"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
 
           {/* Quick Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-3xl mx-auto">
@@ -238,9 +210,8 @@ const HeroSection = () => {
             ))}
           </div>
 
-          {/* Interactive CTA Section */}
+          {/* CTA Section */}
           <div className="space-y-6">
-            {/* Primary Actions */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 size="lg" 
@@ -270,21 +241,6 @@ const HeroSection = () => {
                   WhatsApp
                 </Button>
               </div>
-            </div>
-
-            {/* Video Play Button */}
-            <div className="flex justify-center">
-              <button
-                onClick={handleVideoPlay}
-                className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full px-6 py-3 transition-all duration-300 hover:scale-105"
-              >
-                <div className={`w-12 h-12 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 ${isPlaying ? 'animate-pulse' : 'group-hover:bg-white/30'}`}>
-                  <Play className="w-6 h-6 text-white ml-1" />
-                </div>
-                <span className="text-white/80 group-hover:text-white transition-colors">
-                  {isPlaying ? 'Playing...' : 'Watch Our Story'}
-                </span>
-              </button>
             </div>
 
             {/* Location & Rating */}
