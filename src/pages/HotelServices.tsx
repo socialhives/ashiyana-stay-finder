@@ -74,7 +74,7 @@ const HotelServices = () => {
       description: 'Elegant suites designed for extended stays with home-like comfort and hotel-quality service.',
       features: ['Luxury Suites', 'Kitchenette', 'Business Center', 'Gym Access'],
       startingPrice: '₹1,000/night',
-      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      image: 'https://res.cloudinary.com/dklff68b9/image/upload/v1751288088/Screenshot_2025-06-30_182305_kfllsk.png',
       gallery: [
         'https://res.cloudinary.com/dklff68b9/image/upload/v1751288088/Screenshot_2025-06-30_182305_kfllsk.png',
         'https://res.cloudinary.com/dklff68b9/image/upload/v1751288087/Screenshot_2025-06-30_182327_pejro7.png',
