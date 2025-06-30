@@ -37,13 +37,13 @@ const HeroSection = () => {
     },
     {
       id: 'ashiyana-girls',
-      title: 'Ashiyana PG - Girls',
+      title: 'Shree ji Girls PG',
       subtitle: 'Faridabad Sector 11',
       icon: Home,
       description: 'Secure and comfortable accommodation exclusively for girls',
       features: ['24×7 Security', 'Food & Wi-Fi Included', 'Girls Only', 'Safe Environment'],
       price: '₹7,500/month',
-      virtualTour: 'https://www.google.com/maps/embed?pb=!4v1751197422003!6m8!1m7!1sMua3Ksx4fcGjyAJ6TGAynw!2m2!1d28.36897219909992!2d77.31684057411158!3f186.99776!4f0!5f0.7820865974627469',
+      virtualTour: 'https://www.google.com/maps/embed?pb=!4v1751284546039!6m8!1m7!1sKmpIZZ1QouzUiquGJ5a_Jw!2m2!1d28.36901273072034!2d77.31719588996407!3f6.082243843581333!4f32.700283243794814!5f0.4000000000000002',
       category: 'pg'
     },
     {
