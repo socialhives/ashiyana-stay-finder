@@ -12,12 +12,12 @@ const TestimonialsSlider = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Priya Sharma",
+      name: "Rahul Saini",
       rating: 5,
-      text: "Ashiyana PG feels like a second home. The staff is caring and the facilities are excellent. I've been staying here for 2 years now and couldn't be happier!",
+      text: "Aashiyana Pg is very affordable and good in all facilities like spacious rooms, hygiene, healthy food, management, etc. I think this is the best hostel I have ever lived in.Specially owner ( Mr. Sanjay Singh ) he is very supportive, polite, and helpful.What I am missing the most, is the garden area, the warden mam, my room, friends, and the memories..",
       location: "Working Professional",
-      profession: "Software Engineer",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b9d5d5de?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+      profession: "Local Guide",
+      image: "https://res.cloudinary.com/dklff68b9/image/upload/v1751283847/afab8c90-3540-4b4c-9fb3-c8c8216ecccd.png",
       bgImage: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       experience: "2 Years",
       highlights: ["Safety", "Food Quality", "WiFi Speed"]
