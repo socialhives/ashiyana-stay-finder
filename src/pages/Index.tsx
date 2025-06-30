@@ -10,7 +10,6 @@ import AboutPreview from '@/components/AboutPreview';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import ServiceSelection from '@/components/ServiceSelection';
-import VirtualTour360 from '@/components/VirtualTour360';
 
 const Index = () => {
   return (
@@ -50,7 +49,6 @@ const Index = () => {
       </section>
 
       <ServiceSelection />
-      <VirtualTour360 />
       <QuickInfoGrid />
       <AboutPreview />
       <TestimonialsSlider />

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
@@ -15,7 +15,11 @@ import {
   ArrowLeft,
   Coffee,
   Tv,
-  Bath
+  Bath,
+  Bed,
+  AirVent,
+  CheckCircle,
+  Wine
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '@/components/Footer';
@@ -23,27 +27,78 @@ import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 const HotelServices = () => {
   const navigate = useNavigate();
+  const [selectedHotel, setSelectedHotel] = useState('high-view');
 
   const hotels = [
     {
+      id: 'high-view',
       name: 'Hotel High View',
       location: 'Premium Location, Faridabad',
       rating: 4.8,
       description: 'Experience luxury and comfort at our flagship hotel with premium amenities and exceptional service.',
       features: ['Premium Rooms', 'Restaurant', 'Conference Hall', 'Valet Parking'],
-      startingPrice: '₹3,500/night'
+      startingPrice: '₹1,500/night',
+      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      ],
+      roomTypes: [
+        {
+          name: 'Basic Room',
+          price: '₹1,500/night',
+          features: ['AC', 'TV', 'Attached Bathroom', 'Room Service'],
+          size: '200 sq ft'
+        },
+        {
+          name: 'Standard Room',
+          price: '₹2,000/night',
+          features: ['AC', 'LED TV', 'Mini Bar', 'Balcony', 'Premium Bathroom'],
+          size: '300 sq ft'
+        },
+        {
+          name: 'Premium Room',
+          price: '₹2,500/night',
+          features: ['AC', 'Smart TV', 'Mini Bar', 'City View', 'Luxury Bathroom', 'Complimentary Breakfast'],
+          size: '400 sq ft'
+        }
+      ],
+      amenities: ['Free WiFi', '24/7 Room Service', 'Restaurant', 'Valet Parking', 'Conference Hall', 'Laundry Service']
     },
     {
-      name: 'LA Casa Residence',
+      id: 'la-casa',
+      name: 'La Casa Hotel',
       location: 'Luxury Suites, Faridabad',
       rating: 4.7,
       description: 'Elegant suites designed for extended stays with home-like comfort and hotel-quality service.',
       features: ['Luxury Suites', 'Kitchenette', 'Business Center', 'Gym Access'],
-      startingPrice: '₹4,200/night'
+      startingPrice: '₹1,000/night',
+      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1524230572899-a752b3835840?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      ],
+      roomTypes: [
+        {
+          name: 'Normal Room',
+          price: '₹1,000/night',
+          features: ['AC', 'TV', 'Attached Bathroom', 'WiFi'],
+          size: '180 sq ft'
+        },
+        {
+          name: 'Super Deluxe',
+          price: '₹1,500/night',
+          features: ['AC', 'Smart TV', 'Kitchenette', 'Separate Living Area', 'Premium Amenities'],
+          size: '350 sq ft'
+        }
+      ],
+      amenities: ['Free WiFi', 'Kitchenette', 'Business Center', 'Gym Access', 'Housekeeping', 'Concierge Service']
     }
   ];
 
-  const amenities = [
+  const allAmenities = [
     { icon: Wifi, title: 'High-Speed WiFi', description: 'Complimentary internet access' },
     { icon: Car, title: 'Valet Parking', description: 'Secure vehicle parking service' },
     { icon: Utensils, title: 'Fine Dining', description: 'Multi-cuisine restaurant' },
@@ -53,6 +108,8 @@ const HotelServices = () => {
     { icon: Bath, title: 'Spa Services', description: 'Relaxation and wellness' },
     { icon: Users, title: 'Concierge', description: 'Personal assistance service' }
   ];
+
+  const selectedHotelData = hotels.find(hotel => hotel.id === selectedHotel);
 
   return (
     <div className="min-h-screen bg-background">
@@ -91,67 +148,123 @@ const HotelServices = () => {
         </div>
       </section>
 
-      {/* Hotels */}
-      <section className="py-16 bg-gray-50">
+      {/* Hotel Selection Tabs */}
+      <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
-            Our Premium Hotels
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {hotels.map((hotel, index) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                <div className="h-2 bg-gradient-to-r from-orange-500 to-red-600"></div>
-                <CardContent className="p-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-gray-800">{hotel.name}</h3>
-                    <div className="flex items-center">
-                      <Star className="w-5 h-5 fill-yellow-400 text-yellow-400 mr-1" />
-                      <span className="font-semibold">{hotel.rating}</span>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center text-gray-600 mb-4">
-                    <MapPin className="w-4 h-4 mr-2" />
-                    <span>{hotel.location}</span>
-                  </div>
-                  
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {hotel.description}
-                  </p>
-
-                  <div className="grid grid-cols-2 gap-3 mb-6">
-                    {hotel.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-gray-700">
-                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-orange-500 to-red-600 mr-3"></div>
-                        <span className="text-sm font-medium">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <span className="text-sm text-gray-500">Starting from</span>
-                      <div className="text-2xl font-bold text-orange-600">{hotel.startingPrice}</div>
-                    </div>
-                    <Button className="bg-gradient-to-r from-orange-500 to-red-600 hover:opacity-90">
-                      Book Now
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            {hotels.map((hotel) => (
+              <button
+                key={hotel.id}
+                onClick={() => setSelectedHotel(hotel.id)}
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+                  selectedHotel === hotel.id
+                    ? 'bg-gradient-to-r from-orange-500 to-red-600 text-white shadow-lg'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 shadow-md'
+                }`}
+              >
+                {hotel.name}
+              </button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Amenities */}
-      <section className="py-16">
+      {/* Detailed Hotel Information */}
+      {selectedHotelData && (
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+              {/* Hotel Images */}
+              <div className="space-y-4">
+                <div className="relative overflow-hidden rounded-lg shadow-lg">
+                  <img 
+                    src={selectedHotelData.image} 
+                    alt={selectedHotelData.name}
+                    className="w-full h-80 object-cover"
+                  />
+                </div>
+                <div className="grid grid-cols-3 gap-2">
+                  {selectedHotelData.gallery.map((img, idx) => (
+                    <div key={idx} className="relative overflow-hidden rounded-lg shadow-md">
+                      <img 
+                        src={img} 
+                        alt={`${selectedHotelData.name} view ${idx + 1}`}
+                        className="w-full h-24 object-cover hover:scale-110 transition-transform duration-300 cursor-pointer"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Hotel Details */}
+              <div className="space-y-6">
+                <div>
+                  <h2 className="text-3xl font-bold text-gray-800 mb-2">{selectedHotelData.name}</h2>
+                  <div className="flex items-center mb-4">
+                    <MapPin className="w-5 h-5 text-gray-500 mr-2" />
+                    <span className="text-gray-600">{selectedHotelData.location}</span>
+                    <div className="flex items-center ml-4">
+                      <Star className="w-5 h-5 fill-yellow-400 text-yellow-400 mr-1" />
+                      <span className="font-semibold">{selectedHotelData.rating}</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 mb-6">{selectedHotelData.description}</p>
+                </div>
+
+                {/* Room Types */}
+                <div className="bg-gray-50 rounded-lg p-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Room Types & Pricing</h3>
+                  <div className="space-y-4">
+                    {selectedHotelData.roomTypes.map((room, idx) => (
+                      <div key={idx} className="flex justify-between items-center p-4 bg-white rounded-lg shadow-sm">
+                        <div>
+                          <h4 className="font-semibold text-gray-800">{room.name}</h4>
+                          <p className="text-sm text-gray-600">{room.size}</p>
+                          <div className="flex flex-wrap gap-2 mt-2">
+                            {room.features.map((feature, fidx) => (
+                              <span key={fidx} className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded">
+                                {feature}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-lg font-bold text-orange-600">{room.price}</div>
+                          <Button size="sm" className="mt-2 bg-gradient-to-r from-orange-500 to-red-600">
+                            Book Now
+                          </Button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Hotel Amenities */}
+                <div className="bg-gray-50 rounded-lg p-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Hotel Amenities</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {selectedHotelData.amenities.map((amenity, idx) => (
+                      <div key={idx} className="flex items-center">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
+                        <span className="text-gray-700">{amenity}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* All Amenities */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
             Luxury Amenities
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {amenities.map((amenity, index) => (
+            {allAmenities.map((amenity, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-6">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 mb-4">
