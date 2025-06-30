@@ -76,9 +76,12 @@ const HotelServices = () => {
       startingPrice: '₹1,000/night',
       image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       gallery: [
-        'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1524230572899-a752b3835840?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        'https://res.cloudinary.com/dklff68b9/image/upload/v1751288088/Screenshot_2025-06-30_182305_kfllsk.png',
+        'https://res.cloudinary.com/dklff68b9/image/upload/v1751288087/Screenshot_2025-06-30_182327_pejro7.png',
+        'https://res.cloudinary.com/dklff68b9/image/upload/v1751288087/Screenshot_2025-06-30_182347_rrxkq0.png',
+        'https://res.cloudinary.com/dklff68b9/image/upload/v1751288086/Screenshot_2025-06-30_182334_pqe9av.png',
+        'https://res.cloudinary.com/dklff68b9/image/upload/v1751288086/Screenshot_2025-06-30_182340_dpjuwe.png',
+        'https://res.cloudinary.com/dklff68b9/image/upload/v1751288074/Screenshot_2025-06-30_182357_dcduhd.png'
       ],
       roomTypes: [
         {
