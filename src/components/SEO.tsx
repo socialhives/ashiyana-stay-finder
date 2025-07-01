@@ -1,0 +1,121 @@
+
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+
+interface SEOProps {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  url?: string;
+  type?: 'website' | 'article' | 'business.business';
+  structuredData?: object;
+}
+
+const SEO: React.FC<SEOProps> = ({
+  title = 'Ashiyana PG - Best Paying Guest Accommodation in Sector 11, Faridabad',
+  description = 'Ashiyana PG offers safe, clean & affordable paying guest accommodation in Sector 11, Faridabad. 15+ years of trusted service with premium amenities. Book your stay today!',
+  keywords = 'PG in Faridabad, Paying Guest Faridabad, Accommodation Faridabad, Ashiyana PG, Sector 11 PG, Hotels in Faridabad, PG near Delhi, Student accommodation Faridabad',
+  image = '/lovable-uploads/ashiyana-pg-hero.jpg',
+  url = 'https://ashiyanapg.com',
+  type = 'website',
+  structuredData
+}) => {
+  const defaultStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Ashiyana PG",
+    "description": description,
+    "image": image,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sector 11",
+      "addressLocality": "Faridabad",
+      "addressRegion": "Haryana",
+      "postalCode": "121006",
+      "addressCountry": "IN"
+    },
+    "telephone": "+91-9876543210",
+    "url": url,
+    "priceRange": "₹6,000 - ₹12,000",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "4.7",
+      "bestRating": "5"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "114"
+    },
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "WiFi",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Parking",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Security",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Laundry",
+        "value": true
+      }
+    ],
+    "openingHours": "Mo-Su 00:00-23:59",
+    "paymentAccepted": ["Cash", "Credit Card", "UPI"]
+  };
+
+  const finalStructuredData = structuredData || defaultStructuredData;
+
+  return (
+    <Helmet>
+      {/* Basic Meta Tags */}
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      <meta name="author" content="Ashiyana PG" />
+      <meta name="robots" content="index, follow" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+      {/* Open Graph Meta Tags */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content={type} />
+      <meta property="og:url" content={url} />
+      <meta property="og:image" content={image} />
+      <meta property="og:site_name" content="Ashiyana PG" />
+      <meta property="og:locale" content="en_IN" />
+      
+      {/* Twitter Card Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+      
+      {/* Additional SEO Meta Tags */}
+      <meta name="geo.region" content="IN-HR" />
+      <meta name="geo.placename" content="Faridabad" />
+      <meta name="geo.position" content="28.4089;77.3178" />
+      <meta name="ICBM" content="28.4089, 77.3178" />
+      
+      {/* Canonical URL */}
+      <link rel="canonical" href={url} />
+      
+      {/* Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(finalStructuredData)}
+      </script>
+    </Helmet>
+  );
+};
+
+export default SEO;

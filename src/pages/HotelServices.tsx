@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -24,10 +23,59 @@ import {
 import { useNavigate } from 'react-router-dom';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import SEO from '@/components/SEO';
+import LazyImage from '@/components/LazyImage';
 
 const HotelServices = () => {
   const navigate = useNavigate();
   const [selectedHotel, setSelectedHotel] = useState('high-view');
+
+  const hotelStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "@graph": [
+      {
+        "@type": "Hotel",
+        "name": "Hotel High View",
+        "description": "Premium luxury hotel in Faridabad with modern amenities, restaurant, conference facilities, and exceptional service.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Premium Location",
+          "addressLocality": "Faridabad",
+          "addressRegion": "Haryana",
+          "postalCode": "121006",
+          "addressCountry": "IN"
+        },
+        "telephone": "+91-9876543210",
+        "priceRange": "₹1,500 - ₹2,500",
+        "starRating": {
+          "@type": "Rating",
+          "ratingValue": "4.8",
+          "bestRating": "5"
+        }
+      },
+      {
+        "@type": "Hotel",
+        "name": "La Casa Hotel", 
+        "description": "Elegant luxury suites designed for extended stays with home-like comfort and hotel-quality service in Faridabad.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Luxury Suites",
+          "addressLocality": "Faridabad",
+          "addressRegion": "Haryana",
+          "postalCode": "121006",
+          "addressCountry": "IN"
+        },
+        "telephone": "+91-9876543210",
+        "priceRange": "₹1,000 - ₹1,500",
+        "starRating": {
+          "@type": "Rating",
+          "ratingValue": "4.7",
+          "bestRating": "5"
+        }
+      }
+    ]
+  };
 
   const hotels = [
     {
@@ -116,6 +164,14 @@ const HotelServices = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Luxury Hotels in Faridabad - Hotel High View & La Casa Hotel | Premium Accommodation"
+        description="Experience luxury at our premium hotels in Faridabad. Hotel High View from ₹1,500/night, La Casa Hotel from ₹1,000/night. Modern amenities, fine dining, business facilities."
+        keywords="Hotels in Faridabad, Luxury hotels Faridabad, Hotel High View, La Casa Hotel, Premium accommodation, Business hotels, Extended stay hotels"
+        url="https://ashiyanapg.com/hotel-services"
+        structuredData={hotelStructuredData}
+      />
+      
       {/* Header */}
       <section className="bg-gradient-to-br from-orange-900 via-red-900 to-pink-800 text-white py-16">
         <div className="container mx-auto px-4">
@@ -180,18 +236,18 @@ const HotelServices = () => {
               {/* Hotel Images */}
               <div className="space-y-4">
                 <div className="relative overflow-hidden rounded-lg shadow-lg">
-                  <img 
+                  <LazyImage 
                     src={selectedHotelData.image} 
-                    alt={selectedHotelData.name}
+                    alt={`${selectedHotelData.name} - Premium hotel in Faridabad`}
                     className="w-full h-80 object-cover"
                   />
                 </div>
                 <div className="grid grid-cols-3 gap-2">
                   {selectedHotelData.gallery.map((img, idx) => (
                     <div key={idx} className="relative overflow-hidden rounded-lg shadow-md">
-                      <img 
+                      <LazyImage 
                         src={img} 
-                        alt={`${selectedHotelData.name} view ${idx + 1}`}
+                        alt={`${selectedHotelData.name} interior view ${idx + 1} - Luxury hotel Faridabad`}
                         className="w-full h-24 object-cover hover:scale-110 transition-transform duration-300 cursor-pointer"
                       />
                     </div>

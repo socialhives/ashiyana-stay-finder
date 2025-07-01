@@ -24,10 +24,70 @@ import {
 import { useNavigate } from 'react-router-dom';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import SEO from '@/components/SEO';
+import LazyImage from '@/components/LazyImage';
 
 const PGServices = () => {
   const navigate = useNavigate();
   const [selectedRoom, setSelectedRoom] = useState('single');
+
+  const pgStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "@graph": [
+      {
+        "@type": "LodgingBusiness",
+        "name": "Ashiyana PG Services",
+        "description": "Premium Paying Guest accommodation in Sector 11, Faridabad with single, double, and triple sharing options. Modern amenities and 24/7 security.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Sector 11",
+          "addressLocality": "Faridabad",
+          "addressRegion": "Haryana",
+          "postalCode": "121006",
+          "addressCountry": "IN"
+        },
+        "telephone": "+91-9876543210",
+        "priceRange": "₹6,000 - ₹12,000",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "PG Room Types",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Accommodation",
+                "name": "Single Occupancy Room",
+                "description": "Private room with attached bathroom, study table, wardrobe, and AC"
+              },
+              "price": "12000",
+              "priceCurrency": "INR"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Accommodation",
+                "name": "Double Sharing Room",
+                "description": "Shared room with common bathroom, study area, and storage space"
+              },
+              "price": "8000",
+              "priceCurrency": "INR"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Accommodation",
+                "name": "Triple Sharing Room",
+                "description": "Budget-friendly shared room with basic amenities"
+              },
+              "price": "6000",
+              "priceCurrency": "INR"
+            }
+          ]
+        }
+      }
+    ]
+  };
 
   const amenities = [
     { icon: Shield, title: 'Safe & Secure', description: '24/7 Security with CCTV surveillance' },
@@ -48,7 +108,7 @@ const PGServices = () => {
       gallery: [
         'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
       ],
       specifications: {
         'Room Size': '120 sq ft',
@@ -105,6 +165,14 @@ const PGServices = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Ashiyana PG Services - Single, Double & Triple Sharing Rooms in Faridabad | Premium Accommodation"
+        description="Best PG services in Sector 11, Faridabad. Single rooms from ₹12,000, Double sharing from ₹8,000, Triple sharing from ₹6,000. Modern amenities, 24/7 security, WiFi included."
+        keywords="PG services Faridabad, Single room PG, Double sharing PG, Triple sharing PG, Affordable PG Faridabad, Student accommodation, Working professional PG"
+        url="https://ashiyanapg.com/pg-services"
+        structuredData={pgStructuredData}
+      />
+      
       {/* Header */}
       <section className="bg-gradient-to-br from-blue-900 via-purple-900 to-slate-800 text-white py-16">
         <div className="container mx-auto px-4">
@@ -169,18 +237,18 @@ const PGServices = () => {
               {/* Room Images */}
               <div className="space-y-4">
                 <div className="relative overflow-hidden rounded-lg shadow-lg">
-                  <img 
+                  <LazyImage 
                     src={selectedRoomData.image} 
-                    alt={selectedRoomData.type}
+                    alt={`${selectedRoomData.type} - Premium PG accommodation in Faridabad`}
                     className="w-full h-80 object-cover"
                   />
                 </div>
                 <div className="grid grid-cols-3 gap-2">
                   {selectedRoomData.gallery.map((img, idx) => (
                     <div key={idx} className="relative overflow-hidden rounded-lg shadow-md">
-                      <img 
+                      <LazyImage 
                         src={img} 
-                        alt={`${selectedRoomData.type} view ${idx + 1}`}
+                        alt={`${selectedRoomData.type} interior view ${idx + 1} - Ashiyana PG Faridabad`}
                         className="w-full h-24 object-cover hover:scale-110 transition-transform duration-300 cursor-pointer"
                       />
                     </div>
