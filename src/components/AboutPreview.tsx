@@ -13,7 +13,7 @@ const AboutPreview = () => {
       icon: Shield,
       title: 'Complete Safety & Security',
       description: '24/7 CCTV surveillance, secure entry systems, and trained security personnel',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=8',
       stats: '100% Safe'
     },
     {
