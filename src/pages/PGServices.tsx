@@ -37,28 +37,43 @@ const PGServices = () => {
     "@graph": [
       {
         "@type": "LodgingBusiness",
-        "name": "Ashiyana PG Services",
-        "description": "Premium Paying Guest accommodation in Sector 11, Faridabad with single, double, and triple sharing options. Modern amenities and 24/7 security.",
+        "name": "Ashiyana PG Services - Near YMCA Faridabad",
+        "description": "Premium Paying Guest accommodation near YMCA Faridabad & J.C. Bose University. Safe girls PG and boys hostel in Sector 11 with single, double, and triple sharing options.",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Sector 11",
+          "streetAddress": "Near YMCA Chowk, Sector 11",
           "addressLocality": "Faridabad",
           "addressRegion": "Haryana",
           "postalCode": "121006",
           "addressCountry": "IN"
         },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "28.4089",
+          "longitude": "77.3178"
+        },
         "telephone": "+91-9876543210",
-        "priceRange": "₹6,000 - ₹12,000",
+        "priceRange": "₹6,000 - ₹14,000",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "PG Room Types",
+          "name": "PG Room Types Near YMCA",
           "itemListElement": [
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Accommodation",
-                "name": "Single Occupancy Room",
-                "description": "Private room with attached bathroom, study table, wardrobe, and AC"
+                "name": "Girls PG near YMCA Faridabad - Single Room",
+                "description": "Safe single occupancy room for girls near YMCA with attached bathroom, study table, and security"
+              },
+              "price": "14000",
+              "priceCurrency": "INR"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Accommodation",
+                "name": "Boys PG near YAMCA University - Single Room",
+                "description": "Private room for boys near YAMCA University with modern amenities"
               },
               "price": "12000",
               "priceCurrency": "INR"
@@ -67,35 +82,31 @@ const PGServices = () => {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Accommodation",
-                "name": "Double Sharing Room",
-                "description": "Shared room with common bathroom, study area, and storage space"
+                "name": "Affordable PG near YMCA - Double Sharing",
+                "description": "Budget-friendly double sharing room near YMCA with all facilities"
               },
               "price": "8000",
               "priceCurrency": "INR"
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Accommodation",
-                "name": "Triple Sharing Room",
-                "description": "Budget-friendly shared room with basic amenities"
-              },
-              "price": "6000",
-              "priceCurrency": "INR"
             }
           ]
-        }
+        },
+        "nearbyAttractions": [
+          "YMCA Faridabad",
+          "J.C. Bose University",
+          "YAMCA University",
+          "NST Hospital"
+        ]
       }
     ]
   };
 
   const amenities = [
-    { icon: Shield, title: 'Safe & Secure', description: '24/7 Security with CCTV surveillance' },
-    { icon: Wifi, title: 'High-Speed WiFi', description: 'Unlimited internet access' },
-    { icon: Utensils, title: 'Quality Food', description: 'Hygienic homemade meals' },
-    { icon: Car, title: 'Parking', description: 'Secure vehicle parking' },
-    { icon: Shirt, title: 'Laundry', description: 'Professional laundry service' },
-    { icon: Users, title: 'Common Areas', description: 'Recreation and study rooms' }
+    { icon: Shield, title: 'Safe & Secure', description: '24/7 Security with CCTV surveillance near YMCA' },
+    { icon: Wifi, title: 'High-Speed WiFi', description: 'Unlimited internet access for students' },
+    { icon: Utensils, title: 'Hygienic Food', description: 'Homemade meals with quality ingredients' },
+    { icon: Car, title: 'Secure Parking', description: 'Safe vehicle parking near YMCA' },
+    { icon: Shirt, title: 'Laundry Service', description: 'Professional laundry and cleaning' },
+    { icon: Users, title: 'Community Living', description: 'Recreation and study rooms for students' }
   ];
 
   const roomTypes = [
@@ -166,9 +177,9 @@ const PGServices = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Ashiyana PG Services - Single, Double & Triple Sharing Rooms in Faridabad | Premium Accommodation"
-        description="Best PG services in Sector 11, Faridabad. Single rooms from ₹12,000, Double sharing from ₹8,000, Triple sharing from ₹6,000. Modern amenities, 24/7 security, WiFi included."
-        keywords="PG services Faridabad, Single room PG, Double sharing PG, Triple sharing PG, Affordable PG Faridabad, Student accommodation, Working professional PG"
+        title="Best PG near YMCA Faridabad | Girls & Boys Hostel | Ashiyana PG Services"
+        description="Premium PG near YMCA Faridabad & J.C. Bose University. Safe girls PG from ₹14,000, boys hostel from ₹12,000. Fully furnished rooms with food, WiFi, security near YAMCA University."
+        keywords="PG near YMCA Faridabad, Girls PG near YMCA Faridabad, Safe PG near YAMCA, Hostel near YMCA Faridabad, PG near J.C. Bose University Faridabad, Affordable PG near YMCA University, Best PG near YAMCA Sector 6, Ashiyana PG Faridabad, NST Hospitality PG, Fully furnished PG Faridabad, PG with food and parking, Women-friendly PG accommodation, Community living PG Faridabad"
         url="https://ashiyanapg.com/pg-services"
         structuredData={pgStructuredData}
       />
@@ -190,7 +201,7 @@ const PGServices = () => {
               Ashiyana PG
             </h1>
             <p className="text-xl md:text-2xl text-slate-100 mb-8">
-              Premium Paying Guest Accommodation in Faridabad
+              Premium PG near YMCA Faridabad & J.C. Bose University
             </p>
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="flex items-center">
@@ -201,7 +212,7 @@ const PGServices = () => {
               </div>
               <div className="flex items-center">
                 <MapPin className="w-5 h-5 mr-2" />
-                <span>Sector 11, Faridabad</span>
+                <span>Near YMCA Chowk, Sector 11</span>
               </div>
             </div>
           </div>
@@ -239,7 +250,7 @@ const PGServices = () => {
                 <div className="relative overflow-hidden rounded-lg shadow-lg">
                   <LazyImage 
                     src={selectedRoomData.image} 
-                    alt={`${selectedRoomData.type} - Premium PG accommodation in Faridabad`}
+                    alt={`${selectedRoomData.type} - Premium PG accommodation near YMCA Faridabad`}
                     className="w-full h-80 object-cover"
                   />
                 </div>
@@ -248,7 +259,7 @@ const PGServices = () => {
                     <div key={idx} className="relative overflow-hidden rounded-lg shadow-md">
                       <LazyImage 
                         src={img} 
-                        alt={`${selectedRoomData.type} interior view ${idx + 1} - Ashiyana PG Faridabad`}
+                        alt={`${selectedRoomData.type} interior view ${idx + 1} - Ashiyana PG near YMCA`}
                         className="w-full h-24 object-cover hover:scale-110 transition-transform duration-300 cursor-pointer"
                       />
                     </div>
@@ -299,7 +310,7 @@ const PGServices = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
-            Premium Amenities
+            Premium Amenities Near YMCA
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {amenities.map((amenity, index) => (
@@ -324,10 +335,10 @@ const PGServices = () => {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Move In?</h2>
+          <h2 className="text-4xl font-bold mb-6">Ready to Move In Near YMCA?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Experience comfortable and secure living at Ashiyana PG. 
-            Contact us today to book your room or schedule a visit.
+            Experience comfortable and secure living at Ashiyana PG near YMCA Faridabad. 
+            Perfect for students of J.C. Bose University and YAMCA University.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 

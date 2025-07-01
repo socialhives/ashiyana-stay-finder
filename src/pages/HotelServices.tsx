@@ -36,11 +36,11 @@ const HotelServices = () => {
     "@graph": [
       {
         "@type": "Hotel",
-        "name": "Hotel High View",
-        "description": "Premium luxury hotel in Faridabad with modern amenities, restaurant, conference facilities, and exceptional service.",
+        "name": "Hotel High View - Near YMCA Faridabad",
+        "description": "Premium luxury hotel near YMCA Faridabad with modern amenities, restaurant, conference facilities, and exceptional service.",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Premium Location",
+          "streetAddress": "Premium Location, Near YMCA",
           "addressLocality": "Faridabad",
           "addressRegion": "Haryana",
           "postalCode": "121006",
@@ -52,15 +52,20 @@ const HotelServices = () => {
           "@type": "Rating",
           "ratingValue": "4.8",
           "bestRating": "5"
-        }
+        },
+        "nearbyAttractions": [
+          "YMCA Faridabad",
+          "J.C. Bose University",
+          "YAMCA University"
+        ]
       },
       {
         "@type": "Hotel",
-        "name": "La Casa Hotel", 
-        "description": "Elegant luxury suites designed for extended stays with home-like comfort and hotel-quality service in Faridabad.",
+        "name": "La Casa Hotel - Budget Hotels in Faridabad Sector 11", 
+        "description": "Budget-friendly hotel in Sector 11 Faridabad with elegant suites designed for extended stays and business travelers.",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Luxury Suites",
+          "streetAddress": "Sector 11, Near YMCA",
           "addressLocality": "Faridabad",
           "addressRegion": "Haryana",
           "postalCode": "121006",
@@ -72,7 +77,12 @@ const HotelServices = () => {
           "@type": "Rating",
           "ratingValue": "4.7",
           "bestRating": "5"
-        }
+        },
+        "nearbyAttractions": [
+          "YMCA Faridabad",
+          "Sector 11 Market",
+          "Business District"
+        ]
       }
     ]
   };
@@ -81,9 +91,9 @@ const HotelServices = () => {
     {
       id: 'high-view',
       name: 'Hotel High View',
-      location: 'Premium Location, Faridabad',
+      location: 'Premium Location, Near YMCA Faridabad',
       rating: 4.8,
-      description: 'Experience luxury and comfort at our flagship hotel with premium amenities and exceptional service.',
+      description: 'Experience luxury and comfort at our flagship hotel near YMCA with premium amenities and exceptional service.',
       features: ['Premium Rooms', 'Restaurant', 'Conference Hall', 'Valet Parking'],
       startingPrice: '₹1,500/night',
       image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
@@ -117,9 +127,9 @@ const HotelServices = () => {
     {
       id: 'la-casa',
       name: 'La Casa Hotel',
-      location: 'Luxury Suites, Faridabad',
+      location: 'Budget Hotels in Sector 11 Faridabad',
       rating: 4.7,
-      description: 'Elegant suites designed for extended stays with home-like comfort and hotel-quality service.',
+      description: 'Budget-friendly hotel in Sector 11 with elegant suites designed for extended stays and business travelers.',
       features: ['Luxury Suites', 'Kitchenette', 'Business Center', 'Gym Access'],
       startingPrice: '₹1,000/night',
       image: 'https://res.cloudinary.com/dklff68b9/image/upload/v1751288088/Screenshot_2025-06-30_182305_kfllsk.png',
@@ -165,9 +175,9 @@ const HotelServices = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Luxury Hotels in Faridabad - Hotel High View & La Casa Hotel | Premium Accommodation"
-        description="Experience luxury at our premium hotels in Faridabad. Hotel High View from ₹1,500/night, La Casa Hotel from ₹1,000/night. Modern amenities, fine dining, business facilities."
-        keywords="Hotels in Faridabad, Luxury hotels Faridabad, Hotel High View, La Casa Hotel, Premium accommodation, Business hotels, Extended stay hotels"
+        title="Hotels near YMCA Faridabad | Hotel High View & La Casa Hotel | Budget Hotels Sector 11"
+        description="Premium hotels near YMCA Faridabad. Hotel High View from ₹1,500/night, La Casa Hotel from ₹1,000/night. Budget hotels in Sector 11 Faridabad with modern amenities, business facilities."
+        keywords="Hotel near YMCA Faridabad, Hotels in Sector 11 Faridabad, Budget hotels in Faridabad Sector 11, High View Hotel Faridabad, La Casa Hotel Faridabad, Hotels near YAMCA University, Business hotels Faridabad, Extended stay hotels, Premium accommodation near YMCA"
         url="https://ashiyanapg.com/hotel-services"
         structuredData={hotelStructuredData}
       />
@@ -189,7 +199,7 @@ const HotelServices = () => {
               Luxury Hotels
             </h1>
             <p className="text-xl md:text-2xl text-slate-100 mb-8">
-              Premium Hotel Experiences in Faridabad
+              Premium Hotel Experiences near YMCA Faridabad
             </p>
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="flex items-center">
@@ -200,7 +210,7 @@ const HotelServices = () => {
               </div>
               <div className="flex items-center">
                 <MapPin className="w-5 h-5 mr-2" />
-                <span>Multiple Locations, Faridabad</span>
+                <span>Near YMCA, Sector 11 Faridabad</span>
               </div>
             </div>
           </div>
@@ -238,7 +248,7 @@ const HotelServices = () => {
                 <div className="relative overflow-hidden rounded-lg shadow-lg">
                   <LazyImage 
                     src={selectedHotelData.image} 
-                    alt={`${selectedHotelData.name} - Premium hotel in Faridabad`}
+                    alt={`${selectedHotelData.name} - Premium hotel near YMCA Faridabad`}
                     className="w-full h-80 object-cover"
                   />
                 </div>
@@ -247,7 +257,7 @@ const HotelServices = () => {
                     <div key={idx} className="relative overflow-hidden rounded-lg shadow-md">
                       <LazyImage 
                         src={img} 
-                        alt={`${selectedHotelData.name} interior view ${idx + 1} - Luxury hotel Faridabad`}
+                        alt={`${selectedHotelData.name} interior view ${idx + 1} - Hotel near YMCA Faridabad`}
                         className="w-full h-24 object-cover hover:scale-110 transition-transform duration-300 cursor-pointer"
                       />
                     </div>
@@ -320,7 +330,7 @@ const HotelServices = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
-            Luxury Amenities
+            Luxury Amenities Near YMCA
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {allAmenities.map((amenity, index) => (
@@ -345,9 +355,9 @@ const HotelServices = () => {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-orange-600 to-red-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Experience Luxury</h2>
+          <h2 className="text-4xl font-bold mb-6">Experience Luxury Near YMCA</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Book your stay at our premium hotels and enjoy world-class hospitality 
+            Book your stay at our premium hotels near YMCA Faridabad and enjoy world-class hospitality 
             with exceptional amenities and personalized service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
