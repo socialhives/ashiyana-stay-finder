@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { MapPin, Phone, Star, Building, Home } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -76,29 +77,33 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold mb-3 text-orange-400">PG Services</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="/rooms" className="text-gray-300 hover:text-white transition-colors">Rooms & Pricing</a></li>
-                <li><a href="/about" className="text-gray-300 hover:text-white transition-colors">About Ashiyana PG</a></li>
+                <li><Link to="/rooms" className="text-gray-300 hover:text-white transition-colors">Rooms & Pricing</Link></li>
+                <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Ashiyana PG</Link></li>
+                <li><Link to="/pg-services" className="text-gray-300 hover:text-white transition-colors">PG Services</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-3 text-red-400">Hotels</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Hotel High View</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">LA Casa Residence</a></li>
+                <li><Link to="/hotel-services" className="text-gray-300 hover:text-white transition-colors">Hotel Services</Link></li>
+                <li><Link to="/hotel-services" className="text-gray-300 hover:text-white transition-colors">Hotel High View</Link></li>
+                <li><Link to="/hotel-services" className="text-gray-300 hover:text-white transition-colors">LA Casa Residence</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-3">Explore</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Virtual Tour</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Gallery</a></li>
+                <li><Link to="/rooms" className="text-gray-300 hover:text-white transition-colors">Virtual Tour</Link></li>
+                <li><Link to="/rooms" className="text-gray-300 hover:text-white transition-colors">Gallery</Link></li>
+                <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">Our Story</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-3">Support</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Reviews</a></li>
+                <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact Us</Link></li>
+                <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">Reviews</Link></li>
+                <li><Link to="/rooms" className="text-gray-300 hover:text-white transition-colors">Booking Info</Link></li>
               </ul>
             </div>
             <div>
