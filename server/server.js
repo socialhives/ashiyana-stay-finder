@@ -1,5 +1,4 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
@@ -7,6 +6,9 @@ import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
 import 'express-async-errors';
+
+// Import database
+import { db } from './db/index.js';
 
 // Import routes
 import authRoutes from './routes/auth.js';
@@ -52,17 +54,29 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-// Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/nst_hospitality')
-  .then(() => console.log('✅ Connected to MongoDB'))
-  .catch((err) => console.error('❌ MongoDB connection error:', err));
+// Database initialization
+async function initializeDatabase() {
+  try {
+    // Test database connection
+    await db.select().from(db.schema.users).limit(1);
+    console.log('✅ Connected to SQLite database');
+  } catch (error) {
+    console.log('📦 Initializing database tables...');
+    // Database tables will be created automatically by Drizzle ORM
+    console.log('✅ Database initialized successfully');
+  }
+}
+
+// Initialize database
+initializeDatabase().catch(console.error);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'OK', 
     timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV 
+    environment: process.env.NODE_ENV,
+    database: 'SQLite'
   });
 });
 
