@@ -13,28 +13,28 @@ const AboutPreview = () => {
       icon: Shield,
       title: 'Complete Safety & Security',
       description: '24/7 CCTV surveillance, secure entry systems, and trained security personnel',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=8',
+      image: 'https://res.cloudinary.com/dklff68b9/image/upload/v1751718489/IMG-20250705-WA0033_xsbdvh.jpg',
       stats: '100% Safe'
     },
     {
       icon: Home,
       title: 'Comfortable Living Spaces',
       description: 'Well-furnished rooms with modern amenities and homely atmosphere',
-      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://res.cloudinary.com/dklff68b9/image/upload/v1751718483/IMG-20250705-WA0044_obq6px.jpg',
       stats: '200+ Rooms'
     },
     {
       icon: Award,
       title: '15+ Years of Excellence',
       description: 'Trusted by thousands of students and professionals over the years',
-      image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://res.cloudinary.com/dklff68b9/image/upload/v1751288087/Screenshot_2025-06-30_182347_rrxkq0.png',
       stats: '15+ Years'
     },
     {
       icon: Users,
       title: 'Community Living',
       description: 'Build lasting friendships in our vibrant community environment',
-      image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://res.cloudinary.com/dklff68b9/image/upload/v1751718492/IMG-20250705-WA0035_gmbcw8.jpg',
       stats: '500+ Happy Residents'
     }
   ];
