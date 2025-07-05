@@ -96,11 +96,12 @@ const HotelServices = () => {
       description: 'Experience luxury and comfort at our flagship hotel near YMCA with premium amenities and exceptional service.',
       features: ['Premium Rooms', 'Restaurant', 'Conference Hall', 'Valet Parking'],
       startingPrice: '₹1,500/night',
-      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      image: '/lovable-uploads/c3f76efa-9afd-41ef-acc6-32e5bbe61bee.png',
       gallery: [
-        'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        '/lovable-uploads/77cf6a49-c93f-415f-82ae-a8587e4b76cc.png',
+        '/lovable-uploads/c2629b0b-5bea-4c04-9892-121c65a0d314.png',
+        '/lovable-uploads/8107c401-3efc-4393-a985-ddaed493672e.png',
+        '/lovable-uploads/6ad7f9e1-f419-4f9b-bf20-8450f09c352d.png'
       ],
       roomTypes: [
         {
