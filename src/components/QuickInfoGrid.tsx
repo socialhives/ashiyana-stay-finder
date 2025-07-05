@@ -13,7 +13,7 @@ const QuickInfoGrid = () => {
       description: 'Sector 11, Faridabad',
       color: 'text-blue-600',
       bgColor: 'bg-blue-100',
-      image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      image: 'https://res.cloudinary.com/dklff68b9/image/upload/v1751288087/Screenshot_2025-06-30_182327_pejro7.png',
       details: 'Located in the heart of Faridabad with easy access to metro stations, shopping centers, and business districts. Perfect connectivity to Delhi and NCR region.'
     },
     {
@@ -22,7 +22,7 @@ const QuickInfoGrid = () => {
       description: 'Round the clock support',
       color: 'text-green-600',
       bgColor: 'bg-green-100',
-      image: 'https://images.unsplash.com/photo-1524230572899-a752b3835840?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      image: 'https://res.cloudinary.com/dklff68b9/image/upload/v1751718385/Screenshot_2025-07-05_170817_keulkq.png',
       details: 'Our dedicated staff is available 24/7 to assist you with any needs. From maintenance requests to emergency support, we are always here for you.'
     },
     {
@@ -31,7 +31,7 @@ const QuickInfoGrid = () => {
       description: 'CCTV surveillance & security',
       color: 'text-purple-600',
       bgColor: 'bg-purple-100',
-      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      image: 'https://res.cloudinary.com/dklff68b9/image/upload/v1751288088/Screenshot_2025-06-30_182305_kfllsk.png',
       details: 'Complete security with CCTV monitoring, secure entry systems, and 24/7 security personnel. Your safety is our top priority.'
     },
     {
@@ -40,7 +40,7 @@ const QuickInfoGrid = () => {
       description: 'Unlimited WiFi access',
       color: 'text-orange-600',
       bgColor: 'bg-orange-100',
-      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      image: 'https://res.cloudinary.com/dklff68b9/image/upload/v1751718489/IMG-20250705-WA0038_jt0xv6.jpg',
       details: 'Enjoy blazing fast internet connectivity perfect for work, study, and entertainment. Multiple access points ensure strong signal throughout the property.'
     }
   ];
