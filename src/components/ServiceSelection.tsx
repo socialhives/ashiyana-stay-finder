@@ -42,7 +42,7 @@ const ServiceSelection = () => {
       price: 'Starting ₹1,000/night',
       rating: '4.6',
       residents: '1000+',
-      image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://res.cloudinary.com/dklff68b9/image/upload/v1751718488/IMG-20250705-WA0042_ydetvy.jpg',
       gallery: [
         'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
         'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
