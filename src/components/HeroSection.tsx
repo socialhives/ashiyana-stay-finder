@@ -78,11 +78,11 @@ const HeroSection = () => {
   ];
 
   const handleCall = () => {
-    window.location.href = 'tel:+919876543210';
+    window.location.href = 'tel:+919870366759';
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/919876543210?text=Hi, I would like to inquire about NST Hospitality services', '_blank');
+    window.open('https://wa.me/919870366759?text=Hi, I would like to inquire about NST Hospitality services', '_blank');
   };
 
   const selectedServiceData = services.find(service => service.id === selectedService);

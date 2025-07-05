@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ArrowRight, Phone, Star, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -17,7 +18,7 @@ const Index = () => {
     "@type": "LodgingBusiness",
     "name": "NST Hospitality - Ashiyana PG",
     "description": "Premium Paying Guest accommodation near YMCA Faridabad & J.C. Bose University. Safe girls PG, boys hostel in Sector 11 with modern amenities, food service, and 24/7 security.",
-    "image": "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "image": "/lovable-uploads/f15e7321-47b5-43cc-a04f-6548f400207c.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Near YMCA Chowk, Sector 11",
@@ -31,7 +32,8 @@ const Index = () => {
       "latitude": "28.4089",
       "longitude": "77.3178"
     },
-    "telephone": "+91-9876543210",
+    "telephone": "+91-9870366759",
+    "email": "nsthospitality75@gmail.com",
     "url": "https://ashiyanapg.com",
     "priceRange": "₹6,000 - ₹12,000",
     "starRating": {

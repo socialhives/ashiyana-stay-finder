@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -52,7 +53,7 @@ const PGServices = () => {
           "latitude": "28.4089",
           "longitude": "77.3178"
         },
-        "telephone": "+91-9876543210",
+        "telephone": "+91-9870366759",
         "priceRange": "₹6,000 - ₹14,000",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
@@ -115,11 +116,11 @@ const PGServices = () => {
       type: 'Single Occupancy',
       price: '₹12,000/month',
       features: ['Private room', 'Attached bathroom', 'Study table', 'Wardrobe', 'AC/Fan', 'Personal fridge'],
-      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      image: '/lovable-uploads/76ecccdc-8b05-4b94-828c-ca74a52ded29.png',
       gallery: [
-        'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+        '/lovable-uploads/76ecccdc-8b05-4b94-828c-ca74a52ded29.png',
+        '/lovable-uploads/d2e81994-33c9-4244-9c08-b2a9f428a0a2.png',
+        '/lovable-uploads/ae0aa781-5191-4b8e-8617-6be7e0fe137e.png'
       ],
       specifications: {
         'Room Size': '120 sq ft',
@@ -135,11 +136,11 @@ const PGServices = () => {
       type: 'Double Sharing',
       price: '₹8,000/month',
       features: ['Shared room', 'Common bathroom', 'Study area', 'Storage space', 'AC/Fan', 'Shared fridge'],
-      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      image: '/lovable-uploads/8cc97668-300d-4161-876b-eccafc0f5581.png',
       gallery: [
-        'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1524230572899-a752b3835840?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        '/lovable-uploads/8cc97668-300d-4161-876b-eccafc0f5581.png',
+        '/lovable-uploads/e428ce6a-6c67-4897-a4e5-8d2396ab3c0f.png',
+        '/lovable-uploads/902a6c82-49b3-49bd-b657-2579d915c07b.png'
       ],
       specifications: {
         'Room Size': '180 sq ft',
@@ -155,11 +156,11 @@ const PGServices = () => {
       type: 'Triple Sharing',
       price: '₹6,000/month',
       features: ['Shared room', 'Common facilities', 'Basic amenities', 'Budget-friendly', 'Fan', 'Shared fridge'],
-      image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      image: '/lovable-uploads/b196ce8e-14de-499e-a1ce-8b1b41fb5179.png',
       gallery: [
-        'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1524230572899-a752b3835840?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        '/lovable-uploads/b196ce8e-14de-499e-a1ce-8b1b41fb5179.png',
+        '/lovable-uploads/a73d69c1-b4ed-4748-ac3e-0276a64faea6.png',
+        '/lovable-uploads/b2bb4ec2-391a-4097-8776-ea960b7fd99f.png'
       ],
       specifications: {
         'Room Size': '200 sq ft',
@@ -344,7 +345,7 @@ const PGServices = () => {
             <Button 
               size="lg" 
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4"
-              onClick={() => window.location.href = 'tel:+919876543210'}
+              onClick={() => window.location.href = 'tel:+919870366759'}
             >
               <Phone className="mr-2 w-5 h-5" />
               Call Now

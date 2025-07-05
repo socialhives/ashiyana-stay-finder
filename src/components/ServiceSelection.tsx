@@ -22,11 +22,11 @@ const ServiceSelection = () => {
       price: 'Starting ₹6,000/month',
       rating: '4.8',
       residents: '200+',
-      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/lovable-uploads/f15e7321-47b5-43cc-a04f-6548f400207c.png',
       gallery: [
-        'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-        'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
-        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+        '/lovable-uploads/8cc97668-300d-4161-876b-eccafc0f5581.png',
+        '/lovable-uploads/76ecccdc-8b05-4b94-828c-ca74a52ded29.png',
+        '/lovable-uploads/a73d69c1-b4ed-4748-ac3e-0276a64faea6.png'
       ],
       highlights: ['Boys & Girls Separate', '24/7 Security', 'Home-style Food', 'Study Rooms']
     },
@@ -215,7 +215,7 @@ const ServiceSelection = () => {
               <Button 
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 text-white px-8"
-                onClick={() => window.location.href = 'tel:+919876543210'}
+                onClick={() => window.location.href = 'tel:+919870366759'}
               >
                 Talk to Expert
               </Button>

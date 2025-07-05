@@ -4,7 +4,7 @@ import React from 'react';
 const WhatsAppFloat = () => {
   const handleWhatsApp = () => {
     const message = encodeURIComponent("Hi! I'm interested in Ashiyana PG accommodation. Could you please provide more details?");
-    window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
+    window.open(`https://wa.me/919870366759?text=${message}`, '_blank');
   };
 
   return (
