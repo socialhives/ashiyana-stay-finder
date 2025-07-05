@@ -22,11 +22,11 @@ const ServiceSelection = () => {
       price: 'Starting ₹6,000/month',
       rating: '4.8',
       residents: '200+',
-      image: '/lovable-uploads/f15e7321-47b5-43cc-a04f-6548f400207c.png',
+      image: '/lovable-uploads/01e14e88-9d7a-42c7-b510-a1e985d0d302.png',
       gallery: [
-        '/lovable-uploads/8cc97668-300d-4161-876b-eccafc0f5581.png',
-        '/lovable-uploads/76ecccdc-8b05-4b94-828c-ca74a52ded29.png',
-        '/lovable-uploads/a73d69c1-b4ed-4748-ac3e-0276a64faea6.png'
+        '/lovable-uploads/ac586716-9111-411a-b926-cc7e32e63c28.png',
+        '/lovable-uploads/51240374-0e74-4c05-aba0-7695bbc2496f.png',
+        '/lovable-uploads/3f59e12a-74d5-41ab-a451-0302b2eefcf3.png'
       ],
       highlights: ['Boys & Girls Separate', '24/7 Security', 'Home-style Food', 'Study Rooms']
     },

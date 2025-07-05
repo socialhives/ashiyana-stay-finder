@@ -18,7 +18,7 @@ const Index = () => {
     "@type": "LodgingBusiness",
     "name": "NST Hospitality - Ashiyana PG",
     "description": "Premium Paying Guest accommodation near YMCA Faridabad & J.C. Bose University. Safe girls PG, boys hostel in Sector 11 with modern amenities, food service, and 24/7 security.",
-    "image": "/lovable-uploads/f15e7321-47b5-43cc-a04f-6548f400207c.png",
+    "image": "/lovable-uploads/01e14e88-9d7a-42c7-b510-a1e985d0d302.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Near YMCA Chowk, Sector 11",
@@ -139,7 +139,7 @@ const Index = () => {
       
       <HeroSection />
       
-      {/* Enhanced Ratings Summary */}
+      {/* Enhanced Ratings Summary with new PG images showcase */}
       <section className="py-12 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
@@ -165,6 +165,53 @@ const Index = () => {
               <div className="bg-white rounded-lg p-4 shadow-md">
                 <div className="text-2xl font-bold text-green-600">100+</div>
                 <div className="text-sm text-gray-600">Hotel Guests</div>
+              </div>
+            </div>
+
+            {/* Real PG Images Showcase */}
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Premium PG Facilities</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="relative overflow-hidden rounded-lg shadow-md group">
+                  <img 
+                    src="/lovable-uploads/756b6f0b-d58b-4962-af4d-d5240ab37b44.png" 
+                    alt="Common Dining Area - Ashiyana PG near YMCA Faridabad" 
+                    className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white text-sm font-medium">Dining Area</span>
+                  </div>
+                </div>
+                <div className="relative overflow-hidden rounded-lg shadow-md group">
+                  <img 
+                    src="/lovable-uploads/7eb735fd-43ea-4c63-976b-2a15047b7527.png" 
+                    alt="Double Sharing Room - PG near YMCA Faridabad" 
+                    className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white text-sm font-medium">Double Room</span>
+                  </div>
+                </div>
+                <div className="relative overflow-hidden rounded-lg shadow-md group">
+                  <img 
+                    src="/lovable-uploads/73cfd608-d3d1-4d41-894a-33157979323f.png" 
+                    alt="Single Room with Study Table - Best PG near YMCA" 
+                    className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white text-sm font-medium">Single Room</span>
+                  </div>
+                </div>
+                <div className="relative overflow-hidden rounded-lg shadow-md group">
+                  <img 
+                    src="/lovable-uploads/0224908a-970e-4d34-a29f-281b287d6f97.png" 
+                    alt="Modern Bathroom - Girls PG near YMCA Faridabad" 
+                    className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white text-sm font-medium">Bathroom</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
