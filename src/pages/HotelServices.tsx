@@ -103,6 +103,12 @@ const HotelServices = () => {
         '/lovable-uploads/8107c401-3efc-4393-a985-ddaed493672e.png',
         '/lovable-uploads/6ad7f9e1-f419-4f9b-bf20-8450f09c352d.png'
       ],
+      videos: [
+        'https://res.cloudinary.com/dklff68b9/video/upload/v1752135522/VID-20250709-WA0007_b9xk7j.mp4',
+        'https://res.cloudinary.com/dklff68b9/video/upload/v1752135519/VID-20250709-WA0004_q2qqr7.mp4',
+        'https://res.cloudinary.com/dklff68b9/video/upload/v1752135519/VID-20250709-WA0005_zamvrg.mp4',
+        'https://res.cloudinary.com/dklff68b9/video/upload/v1752135521/VID-20250709-WA0002_cyay2v.mp4'
+      ],
       roomTypes: [
         {
           name: 'Basic Room',
@@ -142,6 +148,7 @@ const HotelServices = () => {
         'https://res.cloudinary.com/dklff68b9/image/upload/v1751288086/Screenshot_2025-06-30_182340_dpjuwe.png',
         'https://res.cloudinary.com/dklff68b9/image/upload/v1751288074/Screenshot_2025-06-30_182357_dcduhd.png'
       ],
+      videos: [],
       roomTypes: [
         {
           name: 'Normal Room',
@@ -244,7 +251,7 @@ const HotelServices = () => {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
-              {/* Hotel Images */}
+              {/* Hotel Images and Videos */}
               <div className="space-y-4">
                 <div className="relative overflow-hidden rounded-lg shadow-lg">
                   <LazyImage 
@@ -253,6 +260,8 @@ const HotelServices = () => {
                     className="w-full h-80 object-cover"
                   />
                 </div>
+                
+                {/* Image Gallery */}
                 <div className="grid grid-cols-3 gap-2">
                   {selectedHotelData.gallery.map((img, idx) => (
                     <div key={idx} className="relative overflow-hidden rounded-lg shadow-md">
@@ -264,6 +273,27 @@ const HotelServices = () => {
                     </div>
                   ))}
                 </div>
+
+                {/* Video Gallery */}
+                {selectedHotelData.videos && selectedHotelData.videos.length > 0 && (
+                  <div className="mt-6">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-3">Hotel Video Tour</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {selectedHotelData.videos.map((video, idx) => (
+                        <div key={idx} className="relative overflow-hidden rounded-lg shadow-md">
+                          <video 
+                            controls 
+                            className="w-full h-48 object-cover rounded-lg"
+                            preload="metadata"
+                          >
+                            <source src={video} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Hotel Details */}
