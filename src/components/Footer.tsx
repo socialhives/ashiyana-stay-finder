@@ -125,7 +125,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 NST Hospitality. All rights reserved. | Providing quality hospitality services since 2009
+            © 2025 all right reserved Nirikshan AI Pvt. Ltd.
           </p>
         </div>
       </div>
