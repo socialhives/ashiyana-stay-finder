@@ -125,7 +125,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 pt-8 text-center">
           <p className="text-gray-400">
-            © 2025 all right reserved Nirikshan AI Pvt. Ltd.
+            © 2025 all right reserved <a href="https://nirikshanai.in" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 transition-colors">Nirikshan AI Pvt. Ltd.</a>
           </p>
         </div>
       </div>
